@@ -1,1 +1,4 @@
+<app-navbar
+  *ngIf="auth_service.getting_item_localstorage('token')"
+></app-navbar>
 <router-outlet></router-outlet>
