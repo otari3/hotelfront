@@ -1,1 +1,98 @@
-<p>home works!</p>
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col">
+      <div class="room-editor">
+        <div class="card shadow-sm h-100">
+          <img
+            src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304"
+            class="card-img-top room-image"
+            alt="Luxury Room"
+          />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="card-title mb-0">Deluxe Suite</h5>
+              <span class="badge bg-primary">Available</span>
+            </div>
+            <div class="room-details mb-2">
+              <p class="mb-1 small">Room Number: 301</p>
+              <p class="mb-1 small">Type: Luxury Suite</p>
+              <p class="mb-1 small">Price: $299/night</p>
+            </div>
+            <button
+              class="btn btn-outline-primary btn-sm w-100"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#editForm1"
+              aria-expanded="false"
+              aria-controls="editForm1"
+            >
+              Edit Room Details
+            </button>
+            <div class="collapse mt-2" id="editForm1">
+              <form class="needs-validation" novalidate>
+                <div class="mb-2">
+                  <label for="roomNumber" class="form-label small"
+                    >Room Number</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    id="roomNumber"
+                    value="301"
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="roomType" class="form-label small"
+                    >Room Type</label
+                  >
+                  <select
+                    class="form-select form-select-sm"
+                    id="roomType"
+                    required
+                  >
+                    <option value="luxury">Luxury Suite</option>
+                    <option value="deluxe">Deluxe Room</option>
+                    <option value="standard">Standard Room</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <label for="price" class="form-label small"
+                    >Price per Night ($)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control form-control-sm"
+                    id="price"
+                    value="299"
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="imageUrl" class="form-label small"
+                    >Room Image URL</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control form-control-sm"
+                    id="imageUrl"
+                    value="https://images.unsplash.com/photo-1631049307264-da0ec9d70304"
+                    required
+                  />
+                </div>
+                <div class="d-grid gap-1">
+                  <button type="submit" class="btn btn-success btn-sm">
+                    Save Changes
+                  </button>
+                  <button type="button" class="btn btn-danger btn-sm">
+                    Delete Room
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
