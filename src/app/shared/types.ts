@@ -6,9 +6,9 @@ export interface Rooms {
 }
 
 export interface Room {
-  id: number;
-  type: string;
-  price: number;
-  room_number: number;
-  imgs: string;
+  id?: number | undefined | null;
+  type?: string | undefined | null;
+  price: number | undefined | null;
+  room_number?: number | undefined | null;
+  imgs?: string | undefined | null;
 }

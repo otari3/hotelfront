@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Room } from './types';
 
 @Injectable({
   providedIn: 'root',
@@ -14,5 +15,8 @@ export class ApiServiceService {
   }
   get_hotel() {
     return this.api.get('http://127.0.0.1:8000/get-hotel/');
+  }
+  update_rooms(body: Room) {
+    return this.api.put('http://127.0.0.1:8000/updaterooms/', body);
   }
 }

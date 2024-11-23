@@ -29,7 +29,12 @@
               Edit Room Details
             </button>
             <div class="collapse mt-2" [id]="'editForm' + room.id">
-              <form class="needs-validation" novalidate>
+              <form
+                class="needs-validation"
+                novalidate
+                [formGroup]="room_from"
+                (ngSubmit)="updating_room()"
+              >
                 <div class="mb-2">
                   <label for="roomNumber" class="form-label small"
                     >Room Number</label
@@ -38,8 +43,7 @@
                     type="text"
                     class="form-control form-control-sm"
                     id="roomNumber"
-                    value="301"
-                    required
+                    formControlName="room_number"
                   />
                 </div>
                 <div class="mb-2">
@@ -64,7 +68,7 @@
                     type="number"
                     class="form-control form-control-sm"
                     id="price"
-                    value="299"
+                    formControlName="price"
                     required
                   />
                 </div>
@@ -76,8 +80,7 @@
                     type="url"
                     class="form-control form-control-sm"
                     id="imageUrl"
-                    value="https://images.unsplash.com/photo-1631049307264-da0ec9d70304"
-                    required
+                    formControlName="imgs"
                   />
                 </div>
                 <div class="d-grid gap-1">
