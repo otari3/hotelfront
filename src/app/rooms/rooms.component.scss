@@ -1,0 +1,48 @@
+.room-editor {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.room-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.collapse {
+  transition: all 0.3s ease;
+}
+
+.form-control,
+.form-select {
+  border-radius: 6px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+@media (max-width: 576px) {
+  .room-image {
+    height: 150px;
+  }
+}
