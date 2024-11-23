@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from '../shared/api-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
-  ngOnInit(): void {}
+  constructor(private api: ApiServiceService) {}
+  hotel: string = '';
+  ngOnInit(): void {
+    this.api.get_hotel().subscribe((data: any) => {
+      this.hotel = data['hotel']['name'];
+    });
+  }
 }
