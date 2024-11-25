@@ -18,7 +18,25 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a
+            class="btn"
+            data-bs-toggle="collapse"
+            data-bs-target="#hotelOperationsMenu"
+            aria-expanded="false"
+            aria-controls="hotelOperationsMenu"
+          >
+            Hotel Operations
+          </a>
+          <div class="collapse" id="hotelOperationsMenu">
+            <div class="card card-body">
+              <button class="btn btn-primary mb-2" id="addRoomButton">
+                Add Room
+              </button>
+              <button class="btn btn-secondary" id="createBookingButton">
+                Create Booking
+              </button>
+            </div>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
