@@ -15,28 +15,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="home"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
           <a
-            class="btn"
-            data-bs-toggle="collapse"
-            data-bs-target="#hotelOperationsMenu"
-            aria-expanded="false"
-            aria-controls="hotelOperationsMenu"
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="nav-link active"
+            style="cursor: pointer"
+            >Menu</a
           >
-            Hotel Operations
-          </a>
-          <div class="collapse" id="hotelOperationsMenu">
-            <div class="card card-body">
-              <button class="btn btn-primary mb-2" id="addRoomButton">
-                Add Room
-              </button>
-              <button class="btn btn-secondary" id="createBookingButton">
-                Create Booking
-              </button>
-            </div>
-          </div>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="addroom">Add Room</button>
+            <button mat-menu-item>Book Date</button>
+          </mat-menu>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>

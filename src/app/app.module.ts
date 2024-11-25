@@ -14,17 +14,29 @@ import {
 import { HomeComponent } from './home/home.component';
 import { setJwtTokenHeaderInterceptor } from './shared/set-jwt-token-header.interceptor';
 import { RoomsComponent } from './rooms/rooms.component';
+import { AddRoomFormComponent } from './add-room-form/add-room-form.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, NavbarComponent, HomeComponent, RoomsComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    NavbarComponent,
+    HomeComponent,
+    RoomsComponent,
+    AddRoomFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatMenuModule,
   ],
   providers: [
     provideHttpClient(withInterceptors([setJwtTokenHeaderInterceptor])),
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent],
 })
