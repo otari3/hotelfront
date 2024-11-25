@@ -17,7 +17,7 @@ export class BookDateComponent implements OnInit {
     checkIn: new FormControl(''),
     checkOut: new FormControl(''),
     roomNumber: new FormControl(''),
-    totalNight: new FormControl(null),
+    totalNight: new FormControl(0),
     totalPrice: new FormControl(0),
   });
 
