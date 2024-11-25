@@ -6,7 +6,12 @@
           <h3 class="mb-0">Add New Room</h3>
         </div>
         <div class="card-body p-5">
-          <form id="roomForm" class="needs-validation" novalidate>
+          <form
+            id="roomForm"
+            class="needs-validation"
+            [formGroup]="addRoomForm"
+            (ngSubmit)="addRoom()"
+          >
             <div class="mb-4">
               <label for="roomNumber" class="form-label">Room Number *</label>
               <input
@@ -15,6 +20,7 @@
                 id="roomNumber"
                 required
                 aria-describedby="roomNumberError"
+                formControlName="roomNumber"
               />
               <div class="invalid-feedback" id="roomNumberError">
                 Room number is required
@@ -27,6 +33,7 @@
                 id="roomType"
                 required
                 aria-describedby="roomTypeError"
+                formControlName="roomType"
               >
                 <option value="">Select room type</option>
                 <option value="single">Single Room</option>
@@ -48,6 +55,7 @@
                 min="0"
                 step="0.01"
                 aria-describedby="roomPriceError"
+                formControlName="roomPrice"
               />
               <div class="invalid-feedback" id="roomPriceError">
                 Please enter a valid price
@@ -61,6 +69,7 @@
                 id="roomImage"
                 placeholder="https://images.unsplash.com/..."
                 aria-describedby="roomImageError"
+                formControlName="imgs"
               />
               <div class="invalid-feedback" id="roomImageError">
                 Please enter a valid image URL

@@ -1,0 +1,119 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow-lg rounded-4">
+        <div
+          class="card-header bg-primary text-white text-center py-4 rounded-top-4"
+        >
+          <h2 class="mb-0">Hotel Booking</h2>
+        </div>
+        <div class="card-body p-4">
+          <form id="bookingForm" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="userId" class="form-label">User ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="userId"
+                  required
+                  aria-label="User ID"
+                />
+                <div class="invalid-feedback">Please enter your user ID.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  required
+                  aria-label="Username"
+                />
+                <div class="invalid-feedback">Please enter your username.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="checkin" class="form-label">Check-in Date</label>
+                <div class="check_in">
+                  <input
+                    class="form-control"
+                    [matDatepicker]="picker"
+                    id="checkin"
+                    aria-label="Check-in date"
+                    [matDatepickerFilter]="dateFilter"
+                  />
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </div>
+                <div class="invalid-feedback">
+                  Please select a check-in date.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="checkout" class="form-label">Check-out Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="checkout"
+                  required
+                  aria-label="Check-out date"
+                />
+                <div class="invalid-feedback">
+                  Please select a check-out date.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="rooms" class="form-label">Number of Rooms</label>
+                <select
+                  class="form-select"
+                  id="rooms"
+                  required
+                  aria-label="Number of rooms"
+                >
+                  <option value="">Choose...</option>
+                  <option value="1">1 Room</option>
+                  <option value="2">2 Rooms</option>
+                  <option value="3">3 Rooms</option>
+                  <option value="4">4 Rooms</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select number of rooms.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="nights" class="form-label">Number of Nights</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nights"
+                  aria-label="Number of nights"
+                  readonly
+                />
+              </div>
+              <div class="col-12">
+                <label for="price" class="form-label">Total Price</label>
+                <div class="input-group">
+                  <span class="input-group-text">$</span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    aria-label="Total price"
+                  />
+                </div>
+              </div>
+              <div class="col-12 mt-4">
+                <button class="btn btn-primary w-100 btn-lg" type="submit">
+                  Book Now
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,9 +14,17 @@ export class ApiServiceService {
     return this.api.get('http://127.0.0.1:8000/selectallrooms/');
   }
   get_hotel() {
-    return this.api.get('http://127.0.0.1:8000/get-hotel/');
+    return this.api.get('http://127.0.0.1:8000/get-hotel/', {
+      withCredentials: true,
+    });
   }
   update_rooms(body: Room) {
     return this.api.put('http://127.0.0.1:8000/updaterooms/', body);
+  }
+  add_room(body: any) {
+    return this.api.post('http://127.0.0.1:8000/insertrooms/', body);
+  }
+  get_room_info() {
+    return this.api.get('http://127.0.0.1:8000/get-room-info/');
   }
 }

@@ -17,6 +17,9 @@ import { RoomsComponent } from './rooms/rooms.component';
 import { AddRoomFormComponent } from './add-room-form/add-room-form.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BookDateComponent } from './book-date/book-date.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     HomeComponent,
     RoomsComponent,
     AddRoomFormComponent,
+    BookDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ReactiveFormsModule,
     HttpClientModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     provideHttpClient(withInterceptors([setJwtTokenHeaderInterceptor])),

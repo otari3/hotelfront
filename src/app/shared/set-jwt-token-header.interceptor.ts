@@ -11,7 +11,5 @@ export const setJwtTokenHeaderInterceptor: HttpInterceptorFn = (req, next) => {
       )}`,
     },
   });
-
-  console.log(req.url);
   return next(modified_req);
 };
