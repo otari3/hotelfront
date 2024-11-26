@@ -33,7 +33,7 @@ export class BookDateComponent implements OnInit {
   numberOfRoomsOnChange() {
     this.hottelBookingForm.controls.roomNumber.valueChanges.subscribe((s) => {
       let room = this.rooms.find((item) => {
-        return item.room_number == Number(s);
+        return item.room_number === Number(s);
       });
       if (room) {
         this.hottelBookingForm.patchValue({

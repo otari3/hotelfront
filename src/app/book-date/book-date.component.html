@@ -49,6 +49,8 @@
                     aria-label="Check-in date"
                     [matDatepickerFilter]="dateFilter"
                     formControlName="checkIn"
+                    readonly
+                    placeholder="dd.mm.yy"
                   />
                   <mat-datepicker-toggle
                     matIconSuffix
@@ -63,16 +65,25 @@
               </div>
               <div class="col-md-6">
                 <label for="checkout" class="form-label">Check-out Date</label>
-                <input
-                  type="date"
-                  class="form-control"
-                  id="checkout"
-                  required
-                  aria-label="Check-out date"
-                  formControlName="checkOut"
-                />
-                <div class="invalid-feedback">
-                  Please select a check-out date.
+                <div class="check_in">
+                  <input
+                    readonly
+                    class="form-control"
+                    id="checkout"
+                    aria-label="Check-out date"
+                    formControlName="checkOut"
+                    [matDatepicker]="picker2"
+                    placeholder="dd.mm.yy"
+                    [matDatepickerFilter]="dateFilter"
+                  />
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    [for]="picker2"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <div class="invalid-feedback">
+                    Please select a check-out date.
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
