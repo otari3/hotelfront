@@ -27,4 +27,7 @@ export class ApiServiceService {
   get_room_info() {
     return this.api.get('http://127.0.0.1:8000/get-room-info/');
   }
+  insert_user(body: any) {
+    return this.api.post('http://127.0.0.1:8000/insert_user/', body);
+  }
 }

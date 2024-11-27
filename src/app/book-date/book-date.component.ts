@@ -31,6 +31,39 @@ export class BookDateComponent implements OnInit {
     totalPrice: new FormControl(0),
   });
 
+  sendingDate() {
+    let userid = this.hottelBookingForm.value.userid;
+    let username = this.hottelBookingForm.value.username;
+    let checkin: any = this.hottelBookingForm.value.checkIn;
+    let checkOut: any = this.hottelBookingForm.value.checkOut;
+    let roomNumber = this.hottelBookingForm.value.roomNumber;
+    let totalNight = this.hottelBookingForm.value.totalNight;
+    let totalPrice = Math.ceil(
+      Number(this.hottelBookingForm.value.totalPrice) / totalNight!
+    );
+    let room = this.rooms.find((item) => {
+      return item.room_number === Number(roomNumber);
+    });
+    let book_date = {
+      check_in: checkin.toISOString().split('T')[0],
+      check_out: checkOut.toISOString().split('T')[0],
+      price: totalPrice,
+      nights: totalNight,
+      room_id: room?.id,
+      name: username,
+      personal_id: userid?.toString(),
+    };
+    this.api.insert_user(book_date).subscribe({
+      next: (suc) => {
+        alert(`user and book room has been booked ${suc}`);
+      },
+      error: (e) => {
+        console.log(e);
+        alert(`user could not be booked ${e['error']['error']}`);
+      },
+    });
+  }
+
   dateFilter = (date: Date | null) => {
     const dateString: any = date?.toISOString().split('T')[0];
     return !this.blockedDates.has(dateString);
@@ -73,16 +106,12 @@ export class BookDateComponent implements OnInit {
         this.hottelBookingForm.patchValue({
           totalPrice: room.price,
         });
-        if (days! > 0) {
+        if (days) {
           this.calculatedPrice(days!, room['price']);
         }
         this.blockedDates = new Set(room['booked_dates']);
       }
     });
-  }
-
-  sendingDate() {
-    console.log(this.hottelBookingForm);
   }
 
   ngOnInit(): void {
@@ -96,7 +125,7 @@ export class BookDateComponent implements OnInit {
         this.blockedDates = new Set(data['rooms'][0]['booked_dates']);
       },
       error: (e) => {
-        alert(`error ${e}`);
+        alert(`error ${e['error']['error']}`);
       },
     });
     this.numberOfRoomsOnChange();
