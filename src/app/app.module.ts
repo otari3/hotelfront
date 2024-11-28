@@ -20,6 +20,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BookDateComponent } from './book-date/book-date.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { BookInfoComponent } from './book-info/book-info.component';
+import { BookedRoomsComponent } from './book-info/booked-rooms/booked-rooms.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     RoomsComponent,
     AddRoomFormComponent,
     BookDateComponent,
+    BookInfoComponent,
+    BookedRoomsComponent,
   ],
   imports: [
     BrowserModule,

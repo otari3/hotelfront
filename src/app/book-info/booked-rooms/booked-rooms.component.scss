@@ -1,0 +1,26 @@
+.booking-card {
+  transition: box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.booking-card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.collapse {
+  transition: all 0.3s ease;
+}
+
+.btn-link {
+  color: #0d6efd;
+}
+
+.btn-link:hover {
+  color: #0a58ca;
+}
+
+@media (max-width: 768px) {
+  .booking-card .row > div {
+    margin-bottom: 1rem;
+  }
+}
