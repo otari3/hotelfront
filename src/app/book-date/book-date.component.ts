@@ -44,9 +44,16 @@ export class BookDateComponent implements OnInit {
     let room = this.rooms.find((item) => {
       return item.room_number === Number(roomNumber);
     });
+    let normalCheckIn = `${checkin.getFullYear()}-${
+      checkin.getMonth() + 1
+    }-${checkin.getDate()}`;
+    let normalCheckOut = `${checkOut.getFullYear()}-${
+      checkOut.getMonth() + 1
+    }-${checkOut.getDate()}`;
+
     let book_date = {
-      check_in: checkin.toISOString().split('T')[0],
-      check_out: checkOut.toISOString().split('T')[0],
+      check_in: normalCheckIn,
+      check_out: normalCheckOut,
       price: totalPrice,
       nights: totalNight,
       room_id: room?.id,

@@ -2,26 +2,26 @@
   <div class="booking-card shadow-sm rounded p-3 bg-white">
     <div class="row align-items-center">
       <div class="col-md-3">
-        <p class="mb-1 text-muted small">User ID: #1234</p>
-        <h6 class="mb-0">John Doe</h6>
+        <p class="mb-1 text-muted small">User ID: {{ data.personal_id }}</p>
+        <h6 class="mb-0">{{ data.name }}</h6>
       </div>
       <div class="col-md-3">
         <p class="mb-1 text-muted small">Room Numbers</p>
-        <h6 class="mb-0">201, 202</h6>
+        <h6 class="mb-0">{{ data.rooms }}</h6>
       </div>
       <div class="col-md-2">
         <p class="mb-1 text-muted small">Total Price</p>
-        <h6 class="mb-0">$299.99</h6>
+        <h6 class="mb-0">${{ data.total }}</h6>
       </div>
       <div class="col-md-4">
         <div class="d-flex justify-content-between">
           <div>
             <p class="mb-1 text-muted small">Check-in</p>
-            <h6 class="mb-0">Jan 15, 2024</h6>
+            <h6 class="mb-0">{{ data.check_in }}</h6>
           </div>
           <div>
             <p class="mb-1 text-muted small">Check-out</p>
-            <h6 class="mb-0">Jan 20, 2024</h6>
+            <h6 class="mb-0">{{ data.check_out }}</h6>
           </div>
         </div>
       </div>

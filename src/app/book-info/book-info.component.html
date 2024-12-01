@@ -1,1 +1,4 @@
-<app-booked-rooms></app-booked-rooms>
+<app-booked-rooms
+  *ngFor="let items of bookedRooms['data']"
+  [data]="items"
+></app-booked-rooms>
