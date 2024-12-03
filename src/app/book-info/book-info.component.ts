@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../shared/api-service.service';
-import { filteredBooked } from '../shared/types';
+import { Datum, filteredBooked } from '../shared/types';
 
 @Component({
   selector: 'app-book-info',
@@ -9,10 +9,10 @@ import { filteredBooked } from '../shared/types';
 })
 export class BookInfoComponent implements OnInit {
   constructor(private api: ApiServiceService) {}
-  bookedRooms!: filteredBooked;
+  bookedRooms!: Datum[];
   ngOnInit(): void {
     this.api.get_filtered_rooms('').subscribe((data) => {
-      this.bookedRooms = data;
+      this.bookedRooms = data['data'];
     });
   }
 }

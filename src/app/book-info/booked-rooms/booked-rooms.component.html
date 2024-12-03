@@ -32,9 +32,9 @@
           class="btn btn-link p-0 text-decoration-none"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#bookingDetails"
+          [attr.data-bs-target]="'#' + data.pagination_ids"
           aria-expanded="false"
-          aria-controls="bookingDetails"
+          [attr.aria-controls]="'#' + data.pagination_ids"
         >
           <span class="d-flex align-items-center">
             <span class="me-2">View Details</span>
@@ -53,7 +53,7 @@
             </svg>
           </span>
         </button>
-        <div class="collapse" id="bookingDetails">
+        <div class="collapse" [id]="data.pagination_ids">
           <div class="pt-3">
             <p class="mb-2 text-muted">
               Additional booking details and information will be displayed here.

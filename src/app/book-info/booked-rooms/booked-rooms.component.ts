@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Datum } from '../../shared/types';
 
 @Component({
@@ -6,6 +6,8 @@ import { Datum } from '../../shared/types';
   templateUrl: './booked-rooms.component.html',
   styleUrl: './booked-rooms.component.scss',
 })
-export class BookedRoomsComponent {
+export class BookedRoomsComponent implements OnInit {
   @Input() data!: Datum;
+
+  ngOnInit(): void {}
 }
