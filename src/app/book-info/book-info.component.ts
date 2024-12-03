@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../shared/api-service.service';
-import { Datum, filteredBooked } from '../shared/types';
+import { Datum } from '../shared/types';
 
 @Component({
   selector: 'app-book-info',
