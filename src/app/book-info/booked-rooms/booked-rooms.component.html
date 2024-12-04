@@ -35,6 +35,7 @@
           [attr.data-bs-target]="'#' + data.pagination_ids"
           aria-expanded="false"
           [attr.aria-controls]="'#' + data.pagination_ids"
+          (click)="gettingRooms()"
         >
           <span class="d-flex align-items-center">
             <span class="me-2">View Details</span>

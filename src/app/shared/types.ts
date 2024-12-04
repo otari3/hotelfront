@@ -28,3 +28,10 @@ export interface Datum {
   name: string;
   pagination_ids: number;
 }
+export interface ReservedRooms {
+  id: number;
+  price: number;
+  in_hotel: boolean;
+  nights: number;
+  room_number: number;
+}

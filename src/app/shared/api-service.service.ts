@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Room, filteredBooked } from './types';
+import { ReservedRooms, Room, filteredBooked } from './types';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +33,12 @@ export class ApiServiceService {
   get_filtered_rooms(queryurl: string) {
     return this.api.get<filteredBooked>(
       `http://127.0.0.1:8000/filter_rooms/${queryurl}`
+    );
+  }
+  get_reserved_rooms(body: { id: number[] }) {
+    return this.api.post<{ data: ReservedRooms[] }>(
+      'http://127.0.0.1:8000/get_rooms/',
+      body
     );
   }
 }
