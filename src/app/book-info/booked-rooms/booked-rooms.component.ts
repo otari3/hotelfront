@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Datum } from '../../shared/types';
+import { Datum, ReservedRooms } from '../../shared/types';
 import { ApiServiceService } from '../../shared/api-service.service';
 
 @Component({
@@ -10,12 +10,13 @@ import { ApiServiceService } from '../../shared/api-service.service';
 export class BookedRoomsComponent implements OnInit {
   constructor(private api: ApiServiceService) {}
   @Input() data!: Datum;
+  reseredRooms!: ReservedRooms[];
   open = false;
   gettingRooms() {
     if (!this.open) {
       this.api.get_reserved_rooms({ id: this.data.reservation_ids }).subscribe({
         next: (resData) => {
-          console.log(resData);
+          this.reseredRooms = resData['data'];
         },
         error: (e) => {
           alert(e['error']['error']);
@@ -23,6 +24,7 @@ export class BookedRoomsComponent implements OnInit {
       });
       this.open = true;
     } else {
+      this.reseredRooms = [];
       this.open = false;
     }
   }

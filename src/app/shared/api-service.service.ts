@@ -41,4 +41,7 @@ export class ApiServiceService {
       body
     );
   }
+  move_hotel(id: number) {
+    return this.api.get(`http://127.0.0.1:8000/move_to_hotel/${id}`);
+  }
 }

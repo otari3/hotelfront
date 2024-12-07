@@ -56,7 +56,10 @@
         </button>
         <div class="collapse" [id]="data.pagination_ids">
           <div class="pt-3">
-            <app-reserved-rooms></app-reserved-rooms>
+            <app-reserved-rooms
+              *ngFor="let items of reseredRooms"
+              [reservedRoom]="items"
+            ></app-reserved-rooms>
           </div>
         </div>
       </div>
