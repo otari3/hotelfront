@@ -21,7 +21,14 @@ export class ReservedRoomsComponent {
         },
       });
     } else {
-      alert('run moveing to reserved query');
+      this.api.move_hotel_to_report(this.reservedRoom.id).subscribe({
+        next: () => {
+          alert('we added to report');
+        },
+        error: (e) => {
+          alert(`smth went wrong ${e['error']['error']}`);
+        },
+      });
     }
   }
 }

@@ -3,3 +3,17 @@
   justify-content: center;
   align-items: center;
 }
+:host {
+  height: 100%; /* Ensures the component fills its parent */
+  background-color: green;
+}
+main {
+  height: 100%;
+  flex-grow: 1; // Ensure the main element takes all available space
+  height: 100%;
+  position: relative;
+}
+
+.container {
+  flex-shrink: 0; // Prevent the container from shrinking
+}

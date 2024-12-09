@@ -5,7 +5,9 @@
       <p>{{ reservedRoom.nights }}</p>
       <p>room number {{ reservedRoom.room_number }}</p>
       <button>delete</button>
-      <button (click)="move_to_hotel()">move to hotel</button>
+      <button (click)="move_to_hotel()">
+        {{ reservedRoom.in_hotel ? "check-out" : "check-in" }}
+      </button>
     </div>
   </div>
 </div>

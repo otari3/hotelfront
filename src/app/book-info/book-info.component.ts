@@ -3,6 +3,7 @@ import { ApiServiceService } from '../shared/api-service.service';
 import { Datum } from '../shared/types';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 
 @Component({
   selector: 'app-book-info',
@@ -24,6 +25,9 @@ export class BookInfoComponent implements OnInit {
     toPrice: new FormControl<number>(0),
     inhotel: new FormControl<boolean>(false),
   });
+  onScroll() {
+    console.log('hello');
+  }
   onFilter() {
     let checkin = this.filterInfo.value.checkin;
     let checkout = this.filterInfo.value.checkout;

@@ -23,6 +23,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { BookedRoomsComponent } from './book-info/booked-rooms/booked-rooms.component';
 import { ReservedRoomsComponent } from './book-info/booked-rooms/reserved-rooms/reserved-rooms.component';
+import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ReservedRoomsComponent } from './book-info/booked-rooms/reserved-rooms/
     MatMenuModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    InfiniteScrollDirective,
   ],
   providers: [
     provideHttpClient(withInterceptors([setJwtTokenHeaderInterceptor])),

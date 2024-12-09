@@ -1,86 +1,93 @@
-<div class="container my-4">
-  <div class="shadow-sm rounded p-3 bg-white centering">
-    <form
-      class="row g-3 align-items-center"
-      [formGroup]="filterInfo"
-      (ngSubmit)="onFilter()"
-    >
-      <div class="col-auto">
-        <label for="checkin" class="form-label mb-0">Check-in</label>
-        <input
-          type="date"
-          class="form-control"
-          id="checkin"
-          name="checkin"
-          formControlName="checkin"
-        />
-      </div>
-
-      <div class="col-auto">
-        <label for="checkout" class="form-label mb-0">Check-out</label>
-        <input
-          type="date"
-          class="form-control"
-          id="checkout"
-          name="checkout"
-          formControlName="checkout"
-        />
-      </div>
-      <div class="col-auto">
-        <label for="search" class="form-label mb-0">Search</label>
-        <input
-          type="text"
-          class="form-control"
-          id="search"
-          name="search"
-          placeholder="Hotel name"
-          formControlName="search"
-        />
-      </div>
-
-      <div class="col-auto">
-        <label for="from-price" class="form-label mb-0">From Price</label>
-        <input
-          type="number"
-          class="form-control"
-          id="from-price"
-          name="from_price"
-          placeholder="Min"
-          formControlName="fromPrice"
-        />
-      </div>
-
-      <div class="col-auto">
-        <label for="to-price" class="form-label mb-0">To Price</label>
-        <input
-          type="number"
-          class="form-control"
-          id="to-price"
-          name="to_price"
-          placeholder="Max"
-          formControlName="toPrice"
-        />
-      </div>
-      <div class="col-auto">
-        <div class="form-check mt-4">
+<main
+  infiniteScroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+  <div class="container my-4">
+    <div class="shadow-sm rounded p-3 bg-white centering">
+      <form
+        class="row g-3 align-items-center"
+        [formGroup]="filterInfo"
+        (ngSubmit)="onFilter()"
+      >
+        <div class="col-auto">
+          <label for="checkin" class="form-label mb-0">Check-in</label>
           <input
-            class="form-check-input"
-            type="checkbox"
-            id="inhotel"
-            name="inhotel"
-            formControlName="inhotel"
+            type="date"
+            class="form-control"
+            id="checkin"
+            name="checkin"
+            formControlName="checkin"
           />
-          <label class="form-check-label" for="inhotel"> In Hotel </label>
         </div>
-      </div>
 
-      <div class="col-auto align-self-end">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </form>
+        <div class="col-auto">
+          <label for="checkout" class="form-label mb-0">Check-out</label>
+          <input
+            type="date"
+            class="form-control"
+            id="checkout"
+            name="checkout"
+            formControlName="checkout"
+          />
+        </div>
+        <div class="col-auto">
+          <label for="search" class="form-label mb-0">Search</label>
+          <input
+            type="text"
+            class="form-control"
+            id="search"
+            name="search"
+            placeholder="Hotel name"
+            formControlName="search"
+          />
+        </div>
+
+        <div class="col-auto">
+          <label for="from-price" class="form-label mb-0">From Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="from-price"
+            name="from_price"
+            placeholder="Min"
+            formControlName="fromPrice"
+          />
+        </div>
+
+        <div class="col-auto">
+          <label for="to-price" class="form-label mb-0">To Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="to-price"
+            name="to_price"
+            placeholder="Max"
+            formControlName="toPrice"
+          />
+        </div>
+        <div class="col-auto">
+          <div class="form-check mt-4">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="inhotel"
+              name="inhotel"
+              formControlName="inhotel"
+            />
+            <label class="form-check-label" for="inhotel"> In Hotel </label>
+          </div>
+        </div>
+
+        <div class="col-auto align-self-end">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
-<app-booked-rooms
-  *ngFor="let items of bookedRooms"
-  [data]="items"
-></app-booked-rooms>
+  <app-booked-rooms
+    *ngFor="let items of bookedRooms"
+    [data]="items"
+  ></app-booked-rooms>
+</main>
