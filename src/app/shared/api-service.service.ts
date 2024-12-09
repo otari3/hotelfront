@@ -30,9 +30,9 @@ export class ApiServiceService {
   insert_user(body: any) {
     return this.api.post('http://127.0.0.1:8000/insert_user/', body);
   }
-  get_filtered_rooms(queryurl: string) {
+  get_filtered_rooms(queryurl: string, paginationurl: string) {
     return this.api.get<filteredBooked>(
-      `http://127.0.0.1:8000/filter_rooms/${queryurl}`
+      `http://127.0.0.1:8000/filter_rooms/${queryurl}${paginationurl}`
     );
   }
   get_reserved_rooms(body: { id: number[] }) {

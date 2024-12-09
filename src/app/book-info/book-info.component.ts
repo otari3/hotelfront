@@ -26,7 +26,19 @@ export class BookInfoComponent implements OnInit {
     inhotel: new FormControl<boolean>(false),
   });
   onScroll() {
-    console.log('hello');
+    let params = this.activetRouter.snapshot.queryParams;
+    const newQueryParam = new URLSearchParams(params).toString();
+    let paginationQuery = `pagination=${
+      this.bookedRooms[this.bookedRooms.length - 1].pagination_ids
+    }`;
+    if (newQueryParam) {
+      paginationQuery = '&' + paginationQuery;
+    }
+    this.api
+      .get_filtered_rooms(`?${newQueryParam}`, paginationQuery)
+      .subscribe((data) => {
+        this.bookedRooms = [...this.bookedRooms, ...data['data']];
+      });
   }
   onFilter() {
     let checkin = this.filterInfo.value.checkin;
@@ -57,7 +69,7 @@ export class BookInfoComponent implements OnInit {
     this.router.navigate(['/bookinfo'], { queryParams });
   }
   ngOnInit(): void {
-    this.api.get_filtered_rooms('').subscribe((data) => {
+    this.api.get_filtered_rooms('', '').subscribe((data) => {
       this.bookedRooms = data['data'];
     });
     this.activetRouter.queryParams.subscribe((params) => {
@@ -70,7 +82,7 @@ export class BookInfoComponent implements OnInit {
         toPrice: params['to'],
         inhotel: params['in_hotel'],
       });
-      this.api.get_filtered_rooms(`?${newQueryParam}`).subscribe((data) => {
+      this.api.get_filtered_rooms(`?${newQueryParam}`, '').subscribe((data) => {
         this.bookedRooms = data['data'];
       });
     });
