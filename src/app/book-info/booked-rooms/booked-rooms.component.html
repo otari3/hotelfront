@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div class="container my-4" *ngIf="empty">
   <div class="booking-card shadow-sm rounded p-3 bg-white">
     <div class="row align-items-center">
       <div class="col-md-3">
@@ -57,9 +57,11 @@
         <div class="collapse" [id]="data.pagination_ids">
           <div class="pt-3">
             <app-reserved-rooms
-              *ngFor="let items of reseredRooms"
+              *ngFor="let items of reseredRooms; let i = index"
               [reservedRoom]="items"
-            ></app-reserved-rooms>
+            >
+              <button (click)="onDelete(i)">delete</button></app-reserved-rooms
+            >
           </div>
         </div>
       </div>

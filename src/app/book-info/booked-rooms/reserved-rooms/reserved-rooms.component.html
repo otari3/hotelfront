@@ -4,7 +4,7 @@
       <p>{{ reservedRoom.price }}</p>
       <p>{{ reservedRoom.nights }}</p>
       <p>room number {{ reservedRoom.room_number }}</p>
-      <button>delete</button>
+      <ng-content></ng-content>
       <button (click)="move_to_hotel()">
         {{ reservedRoom.in_hotel ? "check-out" : "check-in" }}
       </button>

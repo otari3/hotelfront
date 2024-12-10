@@ -47,4 +47,9 @@ export class ApiServiceService {
   move_hotel_to_report(id: number) {
     return this.api.get(`http://127.0.0.1:8000/move_to_report/${id}`);
   }
+  delete_from_reservation(id: number) {
+    return this.api.delete(
+      `http://127.0.0.1:8000/delete_from_reservation/${id}`
+    );
+  }
 }
