@@ -7,6 +7,7 @@ import { isNotAuthGuard } from './shared/is-not-auth.guard';
 import { AddRoomFormComponent } from './add-room-form/add-room-form.component';
 import { BookDateComponent } from './book-date/book-date.component';
 import { BookInfoComponent } from './book-info/book-info.component';
+import { ReportComponent } from './report/report.component';
 
 const routes: Routes = [
   { component: LoginComponent, path: 'login', canActivate: [loginGuard] },
@@ -26,6 +27,7 @@ const routes: Routes = [
     path: 'bookinfo',
     canActivate: [isNotAuthGuard],
   },
+  { component: ReportComponent, path: 'report', canActivate: [isNotAuthGuard] },
   {
     path: '',
     redirectTo: `login`,
