@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ReservedRooms, Room, filteredBooked } from './types';
+import { Report, ReservedRooms, Room, filteredBooked } from './types';
 
 @Injectable({
   providedIn: 'root',
@@ -50,6 +50,16 @@ export class ApiServiceService {
   delete_from_reservation(id: number) {
     return this.api.delete(
       `http://127.0.0.1:8000/delete_from_reservation/${id}`
+    );
+  }
+  dowloand_report(url: string) {
+    return this.api.get<Blob>(url, {
+      responseType: 'blob' as 'json',
+    });
+  }
+  get_report(date?: string | null) {
+    return this.api.get<{ data: Report[] }>(
+      `http://127.0.0.1:8000/get_report/${date}/`
     );
   }
 }
