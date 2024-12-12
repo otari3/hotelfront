@@ -1,13 +1,20 @@
 <div class="container my-4">
   <div class="booking-card shadow-sm rounded p-3 bg-white">
     <div class="info">
-      <p>{{ reservedRoom.price }}</p>
-      <p>{{ reservedRoom.nights }}</p>
-      <p>room number {{ reservedRoom.room_number }}</p>
+      <div class="col-md-3">
+        <p class="mb-1 text-muted small">Price</p>
+        <h6 class="mb-0">{{ reservedRoom.price }}</h6>
+      </div>
+      <div class="col-md-3">
+        <p class="mb-1 text-muted small">Number Of Nights</p>
+        <h6 class="mb-0">{{ reservedRoom.nights }}</h6>
+      </div>
+      <div class="col-md-3">
+        <p class="mb-1 text-muted small">Room Number</p>
+        <h6 class="mb-0">{{ reservedRoom.room_number }}</h6>
+      </div>
       <ng-content></ng-content>
-      <button (click)="move_to_hotel()">
-        {{ reservedRoom.in_hotel ? "check-out" : "check-in" }}
-      </button>
+      <ng-content></ng-content>
     </div>
   </div>
 </div>

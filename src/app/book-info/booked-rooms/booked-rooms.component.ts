@@ -29,6 +29,35 @@ export class BookedRoomsComponent implements OnInit {
       this.open = false;
     }
   }
+  move_to_hotel(item: ReservedRooms, index: number) {
+    if (!item.in_hotel) {
+      this.api.move_hotel(item.id).subscribe({
+        next: () => {
+          alert('we added in hotel');
+          this.reseredRooms.splice(index, 1);
+          if (!this.reseredRooms.length) {
+            this.empty = false;
+          }
+        },
+        error: (e) => {
+          alert(`${e['error']['error']}`);
+        },
+      });
+    } else {
+      this.api.move_hotel_to_report(item.id).subscribe({
+        next: () => {
+          alert('we added to report');
+          this.reseredRooms.splice(index, 1);
+          if (!this.reseredRooms.length) {
+            this.empty = false;
+          }
+        },
+        error: (e) => {
+          alert(`smth went wrong ${e['error']['error']}`);
+        },
+      });
+    }
+  }
   onDelete(index: number) {
     this.api.delete_from_reservation(this.reseredRooms[index].id).subscribe({
       next: () => {

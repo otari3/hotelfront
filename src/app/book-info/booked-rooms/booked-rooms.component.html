@@ -60,8 +60,13 @@
               *ngFor="let items of reseredRooms; let i = index"
               [reservedRoom]="items"
             >
-              <button (click)="onDelete(i)">delete</button></app-reserved-rooms
-            >
+              <button class="btn btn-primary" (click)="move_to_hotel(items, i)">
+                {{ items.in_hotel ? "check-out" : "check-in" }}
+              </button>
+              <button (click)="onDelete(i)" class="btn btn-danger">
+                delete
+              </button>
+            </app-reserved-rooms>
           </div>
         </div>
       </div>
