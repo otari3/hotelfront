@@ -62,4 +62,10 @@ export class ApiServiceService {
       `http://127.0.0.1:8000/get_report/${date}/`
     );
   }
+  register(data: any) {
+    return this.api.post('http://127.0.0.1:8000/inserthotel/', data);
+  }
+  delete_room(id: number | null | undefined) {
+    return this.api.delete(`http://127.0.0.1:8000/deleteroom/${id}`);
+  }
 }

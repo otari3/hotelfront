@@ -11,6 +11,8 @@
         id="form2Example1"
         class="form-control"
         formControlName="email"
+        name="login-email"
+        utocomplete="username"
       />
     </div>
     <div data-mdb-input-init class="form-outline mb-4">
@@ -20,13 +22,15 @@
         id="form2Example2"
         class="form-control"
         formControlName="password"
+        name="login-password"
+        autocomplete="current-password"
       />
     </div>
     <button type="submit" class="btn btn-primary btn-block mb-4">
       Sign in
     </button>
     <div class="text-center">
-      <p>Not a member? <a href="#!">Register</a></p>
+      <p>Not a member? <a routerLink="/register">Register</a></p>
     </div>
   </form>
 </main>

@@ -25,6 +25,7 @@ import { BookedRoomsComponent } from './book-info/booked-rooms/booked-rooms.comp
 import { ReservedRoomsComponent } from './book-info/booked-rooms/reserved-rooms/reserved-rooms.component';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 import { ReportComponent } from './report/report.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ReportComponent } from './report/report.component';
     BookedRoomsComponent,
     ReservedRoomsComponent,
     ReportComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
