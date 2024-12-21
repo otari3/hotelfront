@@ -25,7 +25,7 @@ export class ReportComponent {
   onDownload() {
     this.api
       .dowloand_report(
-        `http://127.0.0.1:8000/dowloand_report/${this.date.value}/`
+        `https://hotelreservationbackend.onrender.com/dowloand_report/${this.date.value}/`
       )
       .subscribe({
         next: (blob) => {
