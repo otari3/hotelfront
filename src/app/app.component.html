@@ -1,4 +1,9 @@
 <app-navbar
   *ngIf="auth_service.getting_item_localstorage('token')"
 ></app-navbar>
+<mat-progress-bar
+  mode="determinate"
+  [value]="currentLoadValue"
+  *ngIf="currentlyLoad"
+></mat-progress-bar>
 <router-outlet></router-outlet>

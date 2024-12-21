@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedFunctionsService {
+  loading = new Subject<boolean>();
   calucultedDifferencInDays(firstDate: any, secondDate: any) {
     const date1: any = new Date(firstDate);
     const date2: any = new Date(secondDate);

@@ -3,7 +3,6 @@ import { ApiServiceService } from '../shared/api-service.service';
 import { Datum } from '../shared/types';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 
 @Component({
   selector: 'app-book-info',
@@ -26,6 +25,9 @@ export class BookInfoComponent implements OnInit {
     inhotel: new FormControl<boolean>(false),
   });
   onScroll() {
+    if (this.bookedRooms.length < 10) {
+      return;
+    }
     let params = this.activetRouter.snapshot.queryParams;
     const newQueryParam = new URLSearchParams(params).toString();
     let paginationQuery = `pagination=${

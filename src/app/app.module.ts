@@ -26,6 +26,7 @@ import { ReservedRoomsComponent } from './book-info/booked-rooms/reserved-rooms/
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 import { ReportComponent } from './report/report.component';
 import { RegisterComponent } from './register/register.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { RegisterComponent } from './register/register.component';
     MatDatepickerModule,
     MatNativeDateModule,
     InfiniteScrollDirective,
+    MatProgressBarModule,
   ],
   providers: [
     provideHttpClient(withInterceptors([setJwtTokenHeaderInterceptor])),
